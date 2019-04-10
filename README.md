@@ -1,4 +1,4 @@
-# react-hashcat
+# hashcat-react
 
 ### Description
 Simple React app to interact with flask-hashcat server. Instructions below pertinent to OSX install.
