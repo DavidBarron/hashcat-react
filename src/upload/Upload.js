@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import Dropzone from '../dropzone/Dropzone'
 import './Upload.css'
+
 
 class Upload extends Component {
     constructor(props) {
