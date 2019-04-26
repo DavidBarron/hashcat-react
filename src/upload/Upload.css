@@ -23,6 +23,23 @@
   overflow-y: auto;
 }
 
+.Filename {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #555;
+}
+
+.Row {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50px;
+  padding: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
 .Actions {
   display: flex;
   flex: 1;
@@ -36,3 +53,4 @@
   margin-bottom: 32px;
   color: #555;
 }
+
