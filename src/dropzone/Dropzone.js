@@ -4,56 +4,56 @@ import './Dropzone.css'
 class Dropzone extends Component {
     constructor(props) {
         super(props)
-        this.state = { hightlight: false };
-        this.fileInputRef = React.createRef();
-        this.openFileDialog = this.openFileDialog.bind(this);
-        this.onFilesAdded = this.onFilesAdded.bind(this);
-        this.onDragOver = this.onDragOver.bind(this);
-        this.onDragLeave = this.onDragLeave.bind(this);
-        this.onDrop = this.onDrop.bind(this);
+        this.state = { hightlight: false }
+        this.fileInputRef = React.createRef()
+        this.openFileDialog = this.openFileDialog.bind(this)
+        this.onFilesAdded = this.onFilesAdded.bind(this)
+        this.onDragOver = this.onDragOver.bind(this)
+        this.onDragLeave = this.onDragLeave.bind(this)
+        this.onDrop = this.onDrop.bind(this)
     }
 
     openFileDialog() {
-        if (this.props.disabled) return;
-        this.fileInputRef.current.click();
+        if (this.props.disabled) return
+        this.fileInputRef.current.click()
     }
 
     fileListToArray(list) {
-        const array = [];
+        const array = []
         for (var i = 0; i < list.length; i++) {
-            array.push(list.item(i));
+            array.push(list.item(i))
         }
-        return array;
+        return array
     }
 
     onFilesAdded(event) {
-        if (this.props.disabled) return;
-        const files = event.target.files;
+        if (this.props.disabled) return
+        const files = event.target.files
         if (this.props.onFilesAdded) {
-          const array = this.fileListToArray(files);
-          this.props.onFilesAdded(array);
+          const array = this.fileListToArray(files)
+          this.props.onFilesAdded(array)
         }
     }
 
     onDragOver(event) {
-        event.preventDefault();
-        if (this.props.disabled) return;
-        this.setState({ hightlight: true });
+        event.preventDefault()
+        if (this.props.disabled) return
+        this.setState({ hightlight: true })
     }
 
     onDragLeave() {
-        this.setState({ hightlight: false });
+        this.setState({ hightlight: false })
     }
 
     onDrop(event) {
-        event.preventDefault();
-        if (this.props.disabled) return;
-        const files = event.dataTransfer.files;
+        event.preventDefault()
+        if (this.props.disabled) return
+        const files = event.dataTransfer.files
         if (this.props.onFilesAdded) {
-          const array = this.fileListToArray(files);
-          this.props.onFilesAdded(array);
+          const array = this.fileListToArray(files)
+          this.props.onFilesAdded(array)
         }
-        this.setState({ hightlight: false });
+        this.setState({ hightlight: false })
     }
 
     render() {
@@ -84,4 +84,4 @@ class Dropzone extends Component {
     }
 }
 
-export default Dropzone;
+export default Dropzone
